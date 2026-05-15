@@ -8,7 +8,7 @@ import net.runelite.client.config.ConfigItem;
 public interface HPhiderConfig extends Config
 {
 	@ConfigItem(
-			keyName = "HideHealthBar",
+			keyName = "Hide player HealthBar",
 			name = "health bar hider",
 			description = "Replaces health bars with the RuneScape high detail mode design."
 	)
