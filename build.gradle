@@ -14,7 +14,7 @@ repositories {
 }
 
 def runeLiteVersion = 'latest.release'
-def pluginMainClass = 'com.example.ExamplePluginTest'
+def hpHiderMainClass = 'com.example.ExamplePluginTest'
 
 dependencies {
 	compileOnly group: 'net.runelite', name:'client', version: runeLiteVersion
@@ -36,7 +36,7 @@ tasks.withType(JavaCompile).configureEach {
 
 tasks.register('run', JavaExec) {
 	classpath = sourceSets.test.runtimeClasspath
-	mainClass = pluginMainClass
+	mainClass = hpHiderMainClass
 
 	jvmArgs "-ea"
 	args "--developer-mode", "--debug"
@@ -45,7 +45,7 @@ tasks.register('run', JavaExec) {
 tasks.register('shadowJar', Jar) {
 	dependsOn configurations.testRuntimeClasspath
 	manifest {
-		attributes('Main-Class': pluginMainClass, 'Multi-Release': true)
+		attributes('Main-Class': hpHiderMainClass, 'Multi-Release': true)
 	}
 
 	duplicatesStrategy = DuplicatesStrategy.EXCLUDE
