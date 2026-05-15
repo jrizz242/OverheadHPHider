@@ -4,16 +4,26 @@ import net.runelite.client.config.Config;
 import net.runelite.client.config.ConfigGroup;
 import net.runelite.client.config.ConfigItem;
 
-@ConfigGroup("example")
+@ConfigGroup("hpHider")
 public interface HPhiderConfig extends Config
 {
 	@ConfigItem(
-		keyName = "greeting",
-		name = "Welcome Greeting",
-		description = "The message to show to the user when they login"
+			keyName = "HideHealthBar",
+			name = "health bar hider",
+			description = "Replaces health bars with the RuneScape high detail mode design."
 	)
-	default String greeting()
+	default boolean hideHealthBar()
 	{
-		return "Hello";
+		return false;
 	}
+	/*@ConfigItem(
+			position = 1,
+			keyName = "hideHPBar",
+			name = "Hide players health bar",
+			description = "Configures whether or not the local player's 2D elements are hidden."
+	)
+	default boolean showLocalPlayer()
+	{
+		return true;
+	}*/
 }
